@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Desktop-209%20images-blue?style=for-the-badge&logo=windows11&logoColor=white">
+  <img src="https://img.shields.io/badge/Desktop-228%20images-blue?style=for-the-badge&logo=windows11&logoColor=white">
   <img src="https://img.shields.io/badge/Mobile-238%20images-green?style=for-the-badge&logo=android&logoColor=white">
   <img src="https://img.shields.io/badge/Total-447%20wallpapers-orange?style=for-the-badge&logo=googlephotos&logoColor=white">
 </p>
@@ -15,11 +15,11 @@
 ```
 My-Wallpaper-Collection/
 │
-├── Desktop/              # 209 desktop wallpapers (16:9 / widescreen)
+├── Desktop/              # 228 desktop wallpapers (16:9 / widescreen)
 │   ├── 1.jpg
 │   ├── 2.jpg
 │   ├── ...
-│   └── 209.jpg
+│   └── 228.jpg
 │
 ├── Mobile/               # 238 mobile wallpapers (portrait / AMOLED-friendly)
 │   ├── 1.jpg
@@ -42,28 +42,28 @@ A quick preview of 10 wallpapers from the **Desktop** collection:
 
 <table>
   <tr>
-    <td><img src="Desktop/1.jpg" width="100%"></td>
-    <td><img src="Desktop/2.png" width="100%"></td>
+    <td><img src="Desktop/100.png" width="100%"></td>
+    <td><img src="Desktop/010.png" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="Desktop/33.jpg" width="100%"></td>
-    <td><img src="Desktop/45.jpg" width="100%"></td>
+    <td><img src="Desktop/022.png" width="100%"></td>
+    <td><img src="Desktop/027.png" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="Desktop/50.png" width="100%"></td>
-    <td><img src="Desktop/6.png" width="100%"></td>
+    <td><img src="Desktop/044.png" width="100%"></td>
+    <td><img src="Desktop/011.jpg" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="Desktop/78.png" width="100%"></td>
-    <td><img src="Desktop/98.png" width="100%"></td>
+    <td><img src="Desktop/073.jpg" width="100%"></td>
+    <td><img src="Desktop/081.jpeg" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="Desktop/143.png" width="100%"></td>
+    <td><img src="Desktop/031.png" width="100%"></td>
     <td><img src="Desktop/158.png" width="100%"></td>
   </tr>
   <tr>
-    <td><img src="Desktop/107.jpeg" width="100%"></td>
-    <td><img src="Desktop/12.jpg" width="100%"></td>
+    <td><img src="Desktop/123.png" width="100%"></td>
+    <td><img src="Desktop/120.jpg" width="100%"></td>
   </tr>
 </table>
 
