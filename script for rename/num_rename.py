@@ -7,36 +7,22 @@ image_extensions = {
     ".gif", ".bmp", ".tiff", ".tif"
 }
 
-def letters_to_number(s):
-    """
-    Convert a bijective base-26 letter sequence back to its number:
-    a -> 1, b -> 2, ..., z -> 26, aa -> 27, ab -> 28, ...
-    """
-    n = 0
-    for ch in s:
-        n = n * 26 + (ord(ch) - ord('a') + 1)
-    return n
-
 all_images = [
     f for f in os.listdir(folder)
     if os.path.isfile(os.path.join(folder, f))
     and os.path.splitext(f)[1].lower() in image_extensions
 ]
 
-# Keep only files whose name (without extension) is purely lowercase letters
-lettered_images = []
-for f in all_images:
-    name, ext = os.path.splitext(f)
-    if name.isalpha() and name.islower():
-        lettered_images.append(f)
+# Sort by modification time (oldest first) so the new numbers reflect
+# the order the images were actually added/created, regardless of
+# whether the current name is letters, numbers, or anything else.
+all_images.sort(key=lambda f: os.path.getmtime(os.path.join(folder, f)))
 
-# Sort by the actual letter-sequence value, not plain alphabetical string sort
-# (plain string sort would wrongly put "aa" right after "a" instead of after "z")
-lettered_images.sort(key=lambda f: letters_to_number(os.path.splitext(f)[0]))
+pad_width = len(str(len(all_images)))  # e.g. 3 digits for up to 999 files
 
-# Two-phase rename to avoid filename conflicts
+# Phase 1: rename everything to temp names to avoid collisions
 temp_files = []
-for i, filename in enumerate(lettered_images, start=1):
+for i, filename in enumerate(all_images, start=1):
     old_path = os.path.join(folder, filename)
     ext = os.path.splitext(filename)[1].lower()
     temp_name = f"__temp_num_{i}{ext}"
@@ -44,9 +30,10 @@ for i, filename in enumerate(lettered_images, start=1):
     os.rename(old_path, temp_path)
     temp_files.append((temp_path, ext))
 
+# Phase 2: rename to final zero-padded sequential names
 for i, (temp_path, ext) in enumerate(temp_files, start=1):
-    new_name = f"{i}{ext}"
+    new_name = f"{i:0{pad_width}d}{ext}"
     new_path = os.path.join(folder, new_name)
     os.rename(temp_path, new_path)
 
-print(f"Done! {len(lettered_images)} image(s) renamed to sequential numbers (1, 2, 3, ...).")
+print(f"Done! {len(all_images)} image(s) renamed to {pad_width}-digit sequential numbers (e.g. 001, 002, ...).")
